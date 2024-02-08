@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/damodaranj/my-app.git'
+     git 'https://github.com/Nithinivanya/my-app.git'
    }
    stage('maven-buildstage'){
 
@@ -24,8 +24,8 @@ node{
    sh 'docker push saidamo/myweb:0.0.2'
    }
    stage('Nexus Image Push'){
-   sh "docker login -u admin -p admin123 13.233.74.99:8083"
-   sh "docker tag saidamo/myweb:0.0.2 13.233.74.99:8083/damo:1.0.0"
+   sh "docker login -u admin -p admin123 35.154.249.131:8083"
+   sh "docker tag saidamo/myweb:0.0.2 35.154.249.131:8083/damo:1.0.0"
    sh 'docker push 13.233.74.99:8083/damo:1.0.0'
    }
 
